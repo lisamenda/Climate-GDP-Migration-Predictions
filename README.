@@ -1,0 +1,109 @@
+
+Interconnection between Climate Change, Migration, and Economic Impact: Analyzing how climate influences GDP and Migration
+Lisa Menda, Nya Griffin, Zoe Iseri ziseri
+Abstract
+● This project investigates the correlation between climate change events and migration patterns and their impact on economic indicators, using real-world refugee, natural disaster, and GDP datasets. The analysis uses Python libraries, including Dash for an interactive visualization, Prophet for time-series forecasting, and Plotly for graphing the complex relationships between the variables.
+● Through data cleaning, manipulation, and modeling techniques, the project applies complex methodologies to forecast future trends, providing insights into the socio-economic implications of climate change.
+Introduction
+● Introduce Project Objective: Identify whether climate change is driving migration patterns and how this migration affects the economy in regions vulnerable to extreme climate events.
+● Explain Structure:
+● Key questions
+Methodology
+  
+  ● Structure:
+○ Our project is structured to investigate the relationship between climate
+change, migration patterns and GDP through the use of data visualization and forecasting techniques. The data is organized into 4 sections.
+■ Data collection: We gathered data from reliable sources
+■ Data cleaning: We cleaned the data, sometimes merging dataframes,
+ensuring consistency across all variables. This is also included melting
+and transposing.
+■ Data visualization: we developed interactive dashboards using Dash
+and Plotly to visualize the trends. Users can select specific countries and disaster types, climate change indicators, and gdp per country, to explore how these events correlate with each other over time.
+■ Forecasting: To predict future trends we integrated Prophet (a time-series forecasting library) into our analysis. Using historical data to predict the future helps illustrate potential outcomes and the continued effects of climate change on global migration and economies.
+● Outline Data Sources: (apis and csv, etc)
+○ Refugee Data - UNHCR (United Nations High Commissioner for Refugees) -
+API that I turned into a csv file
+○ Internal Displacement Data - IDMC (Internal Displacement Monitoring Center)
+-CSV files
+○ Historic Temperature Data (World Bank) - API turned into an Excel file
+○ Historic Precipitation Data (World Bank) - Excel file
+○ World GDP (World Bank) - CSV file
+● Explain the Process: (ex data cleaning, etc)
+○ Data Cleaning:
+■ Handling Missing Values - used fillna()
+■ Converting Data Types - used pd.to_numeric()
+■ Matching ISO Codes - standardized country codes
+■ Filtering data- Dropping Unnecessary Columns - used drop()
+● Remove columns that were irrelevant to the analysis
+ 2
+
+  ○ Data merging
+■ pd.merge()
+● Mention tools used (and what they were used for):
+○ Pandas: essential in the data manipulation and cleaning tasks
+○ Prophet for forecasting
+○ Plotly for visualizations
+○ Dash for Dashboard development
+Overviews
+● Explanation of each section of the project Case Study
+● Japan
+● Saudi Arabia
+Display Dashboard
+● Walkthrough of dashboard Conclusion & Recommendations
+● Summarize key findings from the analysis
+● Recommendations for future work
+○ Combining all dashboards into one integrated platform for more seamless comparisons and a comprehensive analysis.
+Works Cited Page
+● Barrett, M. (2024). Data Cleaning [Lecture 7 Slides]. 90819: Python Programming II. Carnegie Mellon
+University Heinz College of Public and Management.
+● Barrett, M. (2024). Databases In Python [Lecture 8 Slides]. 90819: Python Programming II. Carnegie
+Mellon University Heinz College of Public and Management.
+● Barrett, M. (2024). Introduction to Pandas II [Lecture 6 Slides]. 90819: Python Programming II. Carnegie
+Mellon University Heinz College of Public and Management.
+● Barrett, M. (2024). Other Plotting Libraries [Lecture 12 Slides]. 90819: Python Programming II. Carnegie
+Mellon University Heinz College of Public and Management.
+● Barrett, M. (2024). Web Scraping and Web API’s [Lecture 9 Slides]. 90819: Python Programming II.
+Carnegie Mellon University Heinz College of Public and Management.
+ 3
+
+  ● Brownlee, J. (2020). Time Series Forecasting with Prophet in Python. Machine Learning Mastery. Retrieved from https://machinelearningmastery.com/time-series-forecasting-with-prophet-in-python/
+● Dash. Plotly Technologies Inc. Retrieved from https://dash.plotly.com/
+● Dash Documentation & User Guide | Plotly. Retrieved from
+https://dash.plotly.com/interactive-graphing
+● Develop Data Visualization Interfaces in Python With Dash. Retrieved from https://realpython.com/python-dash/
+● Internal Displacement Monitoring Center (IDMC). (2024). Internal Displacement Database. Retrieved from https://www.internal-displacement.org/database/displacement-data/
+● Plotly Technologies Inc. (2024). Interactive Graphing. Retrieved from https://dash.plotly.com/interactive-graphing
+● Prophet. Facebook Prophet Documentation. Retrieved from https://facebook.github.io/prophet/
+● Range Slider. Dash Documentation. Retrieved from
+https://dash.plotly.com/dash-core-components/rangeslider
+● United Nations High Commissioner for Refugees (UNHCR). (2024). Refugee population statistics.
+Retrieved from https://api.unhcr.org/docs/refugee-statistics.html
+● World Bank, Climate Change Knowledge Portal. (2024). URL:
+https://climateknowledgeportal.worldbank.org/
+User Instructions
+● Migration Instructions:
+○ Part 1: Load Refugee Data: this part loads refugee data from external APIs and saves it as CSV files
+■ Ensure Libraries are installed: json, requests, pandas. If not already installed, install.
+■ Run the code: it fetches refugee data from the UNHCR API
+■ The code will be retrieved and loop through two page ranges:
+● First Part: Pages 1- 632 and stored as unhcr_data_part1.csv
+● Second Part: Pages 633-1265, stored as unhcr_data_part2.csv
+■ If successful, there will be a confirmation message indicating CSV
+creation. There will also be two CSV files produced
+(unhcr_data_part1.csv and unhcr_data_part2.csv)
+■ Troubleshoot: an error message with status code will be displayed if the
+API call fails for any page. Ensure the internet connection is stable and the API URL is accessible. Also make sure to have a couple hours for all of the data to download.
+○ Part 2: Analysis, Visualization, and Dashboard
+■ Ensure required libraries are installed: pandas, numpy, plotly.graph_objects, plotly.express, dash, and prophet
+■ Prepare data by making sure the CSV files (unhcr_data_part1.csv, unhcr_data_part2.csv, and IDMC_GIDD_Disasters_Internal_Displacement_Data.csv) are in the same directory in the script
+        4
+
+ ■ Data cleaning: the code cleans the refugee and disaster datasets. Make sure to inspect the output in the console to verify success.
+■ Data Analysis: The code aggregates and filters data. Verify the outputs to confirm the data.
+■ Running the Dashboard: ensure the cleaned and merged data is loaded correctly. The dashboard will provide interactive elements like dropdowns (Select Country; Select Disaster Type (optional); and Select Data to Visualize) and sliders for selecting the Year Range you would like to visualize. Be sure to select whether you would like your data grouped by Year or Country. The dashboard will display graphs based on the user selections.
+■ Forecasting: in the dashboard, select the data you would like to forecast in the dropdown menu, then select the Range of Years you would like to see forecast.
+1. Using the Climate Change Indicators Dashboard
+● Use the "Select Country/Countries" dropdown to choose one or more countries to analyze.
+● Select what units you would like to view the data in (celsius/fahrenheit + mm/inches)
+● Select a date range (in years) for the data you would like to analyze
+■ The graphs will update automatically to display data for the selected countries.
